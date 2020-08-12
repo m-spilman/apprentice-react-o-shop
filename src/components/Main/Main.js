@@ -1,7 +1,6 @@
 import React from 'react';
 import './Main.scss';
 import { Route, Switch, Redirect } from 'react-router';
-import Home from '../../pages/Home';
 import AdminOrders from '../../pages/AdminOrders';
 import AdminProducts from '../../pages/AdminProducts';
 import CheckOut from '../../pages/CheckOut';
@@ -14,7 +13,7 @@ function Main() {
   return (
     <main className="main">
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={Products} />
         <Route exact path="/admin-orders" component={AdminOrders} />
         <Route exact path="/admin-products" component={AdminProducts} />
         <Route exact path="/check-out" component={CheckOut} />
