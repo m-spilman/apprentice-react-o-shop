@@ -9,9 +9,6 @@ function Header() {
   return (
     <header>
       <nav className="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <Link className="navbar-brand" href="#">
-          Navbar
-        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -27,29 +24,23 @@ function Header() {
         <div className="collapse navbar-collapse" id="navbarsExampleDefault">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <Link className="nav-link" href="#">
+              <Link className="nav-link" to="/">
                 Home <span className="sr-only">(current)</span>
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" href="#">
-                Link
+              <Link className="nav-link" to="/products">
+                Products
               </Link>
             </li>
             <li className="nav-item">
-              <Link
-                className="nav-link disabled"
-                href="#"
-                tabIndex="-1"
-                aria-disabled="true"
-              >
-                Disabled
+              <Link className="nav-link" to="shopping-cart">
+                Shopping Cart
               </Link>
             </li>
             <li className="nav-item dropdown" onClick={toggle}>
               <Link
                 className="nav-link dropdown-toggle"
-                href="#"
                 id="dropdown01"
                 data-toggle="dropdown"
                 aria-haspopup="true"
@@ -61,14 +52,20 @@ function Header() {
                 className={'dropdown-menu ' + (state.isOpen ? 'show' : '')}
                 aria-labelledby="dropdown01"
               >
-                <Link className="dropdown-item" href="#">
-                  Action
+                <Link className="dropdown-item" to="admin-orders">
+                  Admin Orders
                 </Link>
-                <Link className="dropdown-item" href="#">
-                  Another action
+                <Link className="dropdown-item" to="admin-products">
+                  Admin Products
                 </Link>
-                <Link className="dropdown-item" href="#">
-                  Something else here
+                <Link className="dropdown-item" to="orders">
+                  Orders
+                </Link>
+                <Link className="dropdown-item" to="order-success">
+                  Order Success
+                </Link>
+                <Link className="dropdown-item" to="check-out">
+                  Check Out
                 </Link>
               </div>
             </li>
