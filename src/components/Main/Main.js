@@ -1,13 +1,13 @@
 import React from 'react';
-import './Main.scss';
+import './main.scss';
 import { Route, Switch, Redirect } from 'react-router';
-import AdminOrders from '../../pages/AdminOrders';
-import AdminProducts from '../../pages/AdminProducts';
-import CheckOut from '../../pages/CheckOut';
-import Orders from '../../pages/Orders';
-import OrderSuccess from '../../pages/OrderSuccess';
-import Products from '../../pages/Products';
-import ShoppingCart from '../../pages/ShoppingCart';
+import AdminOrders from '../../pages/admin-orders';
+import AdminProducts from '../../pages/admin-products';
+import CheckOut from '../../pages/check-out';
+import Orders from '../../pages/orders';
+import OrderSuccess from '../../pages/order-success';
+import Products from '../../pages/products';
+import ShoppingCart from '../../pages/shopping-cart';
 
 function Main() {
   return (
