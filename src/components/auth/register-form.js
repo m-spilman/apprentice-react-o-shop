@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function LoginForm() {
+function RegisterForm() {
   const [inputs, setInputs] = useState({
     username: '',
     password: '',
+    firstName: '',
+    lastName: '',
   });
 
   const [submitted, setSubmitted] = useState(false);
-  const { username, password } = inputs;
+  const { username, password, firstName, lastName } = inputs;
 
   const onSubmit = (event) => {
     setSubmitted(true);
@@ -22,8 +24,38 @@ function LoginForm() {
 
   return (
     <div className="col-lg-4 offset-lg-4">
-      <h2>Login</h2>
+      <h2>Register</h2>
       <form name="form" onSubmit={onSubmit}>
+        <div className="form-group">
+          <input
+            type="text"
+            name="firstName"
+            placeholder="First Name"
+            value={firstName}
+            onChange={onChange}
+            className="form-control"
+          />
+          {submitted && !firstName && (
+            <div className="invalid-feedback d-block">
+              First name is required
+            </div>
+          )}
+        </div>
+        <div className="form-group">
+          <input
+            type="text"
+            name="lastName"
+            placeholder="Last Name"
+            value={lastName}
+            onChange={onChange}
+            className="form-control"
+          />
+          {submitted && !lastName && (
+            <div className="invalid-feedback d-block">
+              Last name is required
+            </div>
+          )}
+        </div>
         <div className="form-group">
           <input
             type="text"
@@ -46,21 +78,18 @@ function LoginForm() {
             onChange={onChange}
             className="form-control"
           />
-          {submitted &&
-            !password(
-              <div className="invalid-feedback d-block">
-                Password is required
-              </div>
-            )}
+          {submitted && !password && (
+            <div className="invalid-feedback d-block">Password is required</div>
+          )}
         </div>
         <div className="form-group">
-          <button className="btn btn-primary">Login</button>
-          <Link to="/register" className="btn btn-link">
-            Register
+          <button className="btn btn-primary">Register</button>
+          <Link to="/" className="btn btn-link">
+            cancel
           </Link>
         </div>
       </form>
     </div>
   );
 }
-export default LoginForm;
+export default RegisterForm;
